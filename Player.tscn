@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://bpoib1igp1wij"]
+[gd_scene load_steps=21 format=3 uid="uid://bpoib1igp1wij"]
 
 [ext_resource type="Texture2D" uid="uid://da1spkp08b6ld" path="res://character.png" id="1_s7sa1"]
+[ext_resource type="Script" path="res://Player.gd" id="1_yh6dg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_heiev"]
 size = Vector2(12, 20)
@@ -141,6 +142,8 @@ animations = [{
 }]
 
 [node name="Player" type="Area2D"]
+scale = Vector2(5, 5)
+script = ExtResource("1_yh6dg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
@@ -148,5 +151,4 @@ shape = SubResource("RectangleShape2D_heiev")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5i4ok")
-animation = &"down"
-frame_progress = 0.83869
+animation = &"up"
