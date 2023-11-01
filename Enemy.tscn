@@ -1,5 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://dcsur45ii3qs1"]
+[gd_scene load_steps=25 format=3 uid="uid://1urqytrvastj"]
 
+[ext_resource type="Script" path="res://Enemy.gd" id="1_cvp04"]
 [ext_resource type="Texture2D" uid="uid://c5e1rsio6ucsk" path="res://log.png" id="1_n3c7a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u737n"]
@@ -175,6 +176,7 @@ radius = 7.0
 height = 18.0
 
 [node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_cvp04")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_iolre")

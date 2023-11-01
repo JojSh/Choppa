@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dlnw5d02jhgvh" path="res://Overworld.png" id="1_2ctix"]
 [ext_resource type="PackedScene" uid="uid://bpoib1igp1wij" path="res://Player.tscn" id="2_rp60p"]
-[ext_resource type="PackedScene" uid="uid://dcsur45ii3qs1" path="res://Enemy.tscn" id="3_pyo4f"]
+[ext_resource type="PackedScene" uid="uid://1urqytrvastj" path="res://Enemy.tscn" id="3_pyo4f"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_57vs8"]
 
