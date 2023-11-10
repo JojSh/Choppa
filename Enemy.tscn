@@ -172,8 +172,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xro03"]
-radius = 7.0
-height = 18.0
+radius = 4.0
+height = 10.0
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_cvp04")
@@ -183,4 +183,6 @@ sprite_frames = SubResource("SpriteFrames_iolre")
 animation = &"down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_xro03")
