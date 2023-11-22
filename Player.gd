@@ -10,14 +10,16 @@ func _physics_process (delta):
 	move_and_slide()
 	handle_walking_animation(direction)
 
+	if Input.is_action_just_pressed("attack"):
+		$AnimatedSprite2D.play("attack_down")
+
 func handle_walking_animation (direction):
-	if direction.x > 0:
-		$AnimatedSprite2D.play("right")
-	elif direction.x < 0:
-		$AnimatedSprite2D.play("left")
-	elif direction.y < 0:
-		$AnimatedSprite2D.play("up")
-	elif direction.y > 0:
-		$AnimatedSprite2D.play("down")
-	else:
-		$AnimatedSprite2D.stop()
+	if not $AnimatedSprite2D.is_playing():
+		if direction.x > 0:
+			$AnimatedSprite2D.play("right")
+		elif direction.x < 0:
+			$AnimatedSprite2D.play("left")
+		elif direction.y < 0:
+			$AnimatedSprite2D.play("up")
+		elif direction.y > 0:
+			$AnimatedSprite2D.play("down")
