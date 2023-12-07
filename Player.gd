@@ -13,6 +13,9 @@ func _physics_process (delta):
 
 	if Input.is_action_just_pressed("attack"):
 		handle_attack_animation()
+		if $AttackRaycast.is_colliding() and $AttackRaycast.get_collider().is_in_group("Enemies"):
+			if $AttackRaycast.get_collider().has_method("die"):
+				$AttackRaycast.get_collider().die()
 
 func handle_walking_animation (direction):
 	if not $AnimatedSprite2D.is_playing():

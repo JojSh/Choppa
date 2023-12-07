@@ -280,9 +280,12 @@ script = ExtResource("1_yh6dg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_5i4ok")
-animation = &"right"
+animation = &"attack_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 7)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_wh4xt")
+
+[node name="AttackRaycast" type="RayCast2D" parent="."]
+target_position = Vector2(15, 0)

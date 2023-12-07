@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://1urqytrvastj"]
+[gd_scene load_steps=26 format=3 uid="uid://1urqytrvastj"]
 
 [ext_resource type="Script" path="res://Enemy.gd" id="1_cvp04"]
 [ext_resource type="Texture2D" uid="uid://c5e1rsio6ucsk" path="res://log.png" id="1_n3c7a"]
@@ -175,14 +175,22 @@ animations = [{
 radius = 4.0
 height = 10.0
 
-[node name="Enemy" type="CharacterBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eiiqw"]
+radius = 8.0
+height = 22.0
+
+[node name="Enemy" type="CharacterBody2D" groups=["Enemies"]]
 script = ExtResource("1_cvp04")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_iolre")
 animation = &"down"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="FeetBox" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_xro03")
+
+[node name="HitBox" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_eiiqw")

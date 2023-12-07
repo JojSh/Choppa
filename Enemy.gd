@@ -26,3 +26,6 @@ func handle_animation (direction):
 		$AnimatedSprite2D.play("down")
 	else:
 		$AnimatedSprite2D.stop()
+
+func die ():
+	queue_free()
