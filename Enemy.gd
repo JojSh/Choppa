@@ -2,13 +2,16 @@ extends CharacterBody2D
 
 var awarenessRadius : int = 80
 var direction : Vector2
-@onready var target = get_node("/root/Main/Player")
+@onready var player = get_node("/root/Main/Player")
+
+func _ready():
+	player.hit_enemy.connect(take_damage)
 
 func _physics_process (delta):
-	var distanceToTarget = position.distance_to(target.position)
+	var distanceToTarget = position.distance_to(player.position)
 	
 	if distanceToTarget < awarenessRadius:
-		direction = (target.position - position).normalized()
+		direction = (player.position - position).normalized()
 		velocity = direction * 40
 		move_and_slide()
 
@@ -29,3 +32,7 @@ func handle_animation (direction):
 
 func die ():
 	queue_free()
+
+func take_damage(collider):
+	if collider == self:
+		die()
