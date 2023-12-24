@@ -1,8 +1,10 @@
 extends CharacterBody2D
+class_name Player
 
 signal hit_enemy(collider)
 
 var move_speed_px : int = 50
+var hit_points : int = 3
 var facing_direction : Vector2 = Vector2()
 
 func _physics_process (delta):
@@ -23,6 +25,17 @@ func colliding_with_enemy():
 
 func register_hit_on_enemy():
 	emit_signal("hit_enemy", $AttackRaycast.get_collider())
+	
+func take_damage (damageAmount):
+	hit_points -= damageAmount
+	if hit_points <= 0:
+		die()
+	else:
+		print("The player was hit. ", hit_points, " HP left.")
+	
+func die () :
+	print("Game over")
+	get_tree().reload_current_scene()
 
 func handle_walking_animation (direction):
 	if not $AnimatedSprite2D.is_playing():
