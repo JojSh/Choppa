@@ -194,3 +194,7 @@ shape = SubResource("CapsuleShape2D_xro03")
 [node name="HitBox" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_eiiqw")
+
+[node name="AttackDelayTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="AttackDelayTimer" to="." method="_on_attack_delay_timer_timeout"]
